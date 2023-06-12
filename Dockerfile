@@ -1,5 +1,5 @@
 
-FROM centos:8
+FROM almalinux:8
 
 RUN yum install -y make patch gcc pcre-devel openssl-devel zlib-devel wget openssl
 
@@ -16,5 +16,5 @@ RUN openssl req -subj '/CN=localhost/O=/C=SE' -new -newkey rsa:2048 -sha256 -day
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
 
 EXPOSE 5671
-CMD ["/usr/local/nginx/sbin/nginx"]
+CMD ["/usr/local/nginx/sbin/nginx", "-g", "daemon off;"]
 
