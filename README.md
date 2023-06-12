@@ -58,3 +58,5 @@ $> docker build -t nginx-proxy-protocol-v2 .
 $> docker run -i -t nginx-proxy-protocol-v2 bash
 ```
 
+# Docker-compose
+docker-compose up --build -d
