@@ -8,7 +8,7 @@ RUN wget -q https://nginx.org/download/nginx-1.19.8.tar.gz && tar xf nginx-1.19.
 WORKDIR /tmp/nginx-1.19.8
 RUN patch -p1 <<< $(wget -qO- https://raw.githubusercontent.com/dedok/nginx-stream-proxy-protocol-v2/main/stream-proxy-protocol-v2-release-1.19.8.patch)
 
-RUN ./configure --with-debug --with-http_ssl_module --with-stream --with-http_auth_request_module --with-stream_ssl_module && \
+RUN ./configure --with-http_ssl_module --with-stream --with-http_auth_request_module --with-stream_ssl_module && \
 make && make install
 
 WORKDIR /tmp
